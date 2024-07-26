@@ -1,0 +1,31 @@
+{
+  "name": "Team Name",
+  "size": 6,
+  "members": [
+    {
+      "name": "John Doe",
+      "mail": "john@doe.com",
+      "isActive": false
+    },
+    {
+      "name": "Sarah Doe",
+      "mail": "sarah@doe.com",
+      "isActive": false
+    },
+    {
+      "name": "Jen Doe",
+      "mail": "jen@doe.com",
+      "isActive": false
+    },
+    {
+      "name": "Jo Doe",
+      "mail": "jo@doe.com",
+      "isActive": false
+    },
+    {
+      "name": "Steve Doe",
+      "mail": "steve@doe.com",
+      "isActive": false
+    }
+  ]
+}

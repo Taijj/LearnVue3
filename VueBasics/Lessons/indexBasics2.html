@@ -1,0 +1,78 @@
+<!DOCTYPE html class="h-full">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@3"></script>        
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="h-full grid place-items-center">
+
+        <div id="app">
+
+            <!-- v-show: Will set display to none, but element still exists in DOM -->
+            <section v-show="todoAssignments.length">
+                <h2 class="font-bold mb-2">Todo:</h2>
+                <ul>
+                    <!-- v-for: basically a foreach -->
+                    <!-- :key: prevents order and other list weirdness -->
+                    <li
+                        v-for="a in todoAssignments"
+                        :key="a.id"
+                    >
+                        <label>
+                            <input type="checkbox" v-model="a.complete">
+                            {{ a.name }}
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- v-if: DOM element won't exist while condition is false -->
+            <section class="mt-8" v-if="doneAssignments.length">
+                <h2 class="font-bold mb-2">Done:</h2>
+
+                <ul>
+                    <li
+                        v-for="a in doneAssignments"
+                        :key="a.id"
+                    >
+                        <label>
+                            <input type="checkbox" v-model="a.complete">
+                            {{ a.name }}
+                        </label>
+                    </li>                   
+                </ul>
+            </section>           
+
+        </div>
+            
+        <script>
+            let app = {
+                data() {
+                    return {
+                        assignments: [
+                            { name: 'Compute Invariants', complete: false, id: 1 },
+                            { name: 'Defibrilate Quockubators', complete: false, id: 2 },
+                            { name: 'Dismifftify Argobargs', complete: false, id: 3 },
+                            { name: 'Shmeep the Deep', complete: false, id: 4 },
+                            { name: 'Sysiphos the Boulderos', complete: false, id: 5 }
+                        ]
+                    }
+                },
+
+                // "Computed Properties"
+                computed: {
+                    todoAssignments() {
+                        return this.assignments.filter(a => !a.complete);
+                    },
+                    doneAssignments() {
+                        return this.assignments.filter(a => a.complete);
+                    }
+                }
+            }
+
+            Vue.createApp(app).mount('#app');
+        </script>
+    </body>
+</html>

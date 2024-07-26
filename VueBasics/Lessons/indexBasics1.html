@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@3"></script>
+        <style>
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                display: grid;
+                place-items: center;
+            }
+
+            .text-red {
+                color: red;
+            }
+
+            .text-green {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- : colon is short vor v-bind: and @ is short for v-on: -->
+            <button :class="buttonClass" @click="toggle">{{ buttonLabel }}</button>
+        </div>
+            
+        <script>
+            Vue.createApp({ // Called  "Options API method" for structuring the app
+
+                data() { // Single Source of Truth
+                    return {
+                        buttonClass: undefined,
+                        buttonLabel: undefined,
+                        active: false
+                    }                    
+                },
+
+                methods: {
+                    toggle() {
+                        this.active = !this.active;                        
+                        this.update();
+                    },                    
+                    update() {
+                        this.buttonLabel = this.active ? 'ON' : 'OFF';
+                        this.buttonClass = this.active ? 'text-green' : 'text-red';
+                    }
+                },
+                
+                mounted() {
+                    this.update();
+                }
+
+            }).mount('#app');
+        </script>
+    </body>
+</html>

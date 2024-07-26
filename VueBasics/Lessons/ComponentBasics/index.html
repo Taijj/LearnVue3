@@ -1,0 +1,44 @@
+<!DOCTYPE html class="h-full">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@3"></script>        
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @keyframes spinner {
+                to {transform: rotate(360deg);}
+            }
+            
+            /* Progress spinner taken from :https://stephanwagner.me/only-css-loading-spinner */       
+            .is-loading { color:transparent; }
+            .is-loading:before {
+                content: '';
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -10px;
+                border-radius: 50%;
+                border: 2px solid #ccc;
+                border-top-color: #000;
+                animation: spinner .6s linear infinite;
+            }
+        </style>
+    </head>
+    <body class="h-full grid place-items-center">
+
+        <div id="app">                         
+            <!-- Change processing to false to hide the spinner and show the label instead -->
+            <app-button type="secondary" processing="true">Secundor</app-button>            
+        </div>
+            
+        <script type="module">
+            import App from "./js/components/App.js";           
+            Vue.createApp(App).mount('#app');
+        </script>
+    </body>
+</html>

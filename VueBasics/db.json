@@ -1,0 +1,33 @@
+{
+	"assignments": [
+		{
+			"id": 1,
+			"name": "Compute Invariants",
+			"tag": "Schnödz",
+			"complete": false
+		},
+		{
+			"id": 2,
+			"name": "Defibrilate Quockubators",
+			"tag": "Spleen",
+			"complete": false
+		},
+		{
+			"id": 3,
+			"name": "Dismifftify Argobargs",
+			"tag": "Schnödz",
+			"complete": false
+		},
+		{
+			"id": 4,
+			"name": "Shmeep the Deep",
+			"tag": "Unicorn",
+			"complete": false
+		},
+		{
+			"id": 5,
+			"name": "Sysiphos the Boulderos",
+			"complete": false
+		}
+	]
+}
