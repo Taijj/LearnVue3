@@ -7,11 +7,12 @@ function aFunction() {
 
 export default function HelloBasic() {
   // jsx needs to always return one single element, potentially containing multiple others!
+  // This can be circumvented with "fragments" <>...</> (kinda like empty tags)
   return (
-    <div>
-      <h1>Hello {name}!</h1>
+    <>
+      <h3>Hello {name}!</h3>
       <p>Do some Javascript: {10 + 20}</p>
       <p>Call a function: {aFunction()}</p>
-    </div>
+    </>
   );
 }

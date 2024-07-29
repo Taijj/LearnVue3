@@ -1,6 +1,7 @@
 import HelloBasic from "./components/HelloBasic";
 import HelloDynamic from "./components/HelloDynamic";
 import Fruits from "./components/Fruits";
+import Conditional from "./components/Conditional";
 
 // Components have to start with a capital letter, to distinguish them from normal HTML tags
 // .jsx - a kind of HTML + Javascript mixture
@@ -13,6 +14,7 @@ export default function App() {
       <HelloBasic />
       <HelloDynamic message="Howdy" name="Mike" seatNumbers={seatNumbers} />
       <Fruits />
+      <Conditional isColleg={true} />
     </div>
   );
 }
