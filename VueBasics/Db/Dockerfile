@@ -1,4 +1,4 @@
-FROM node:lts-alpine as default
+FROM node:lts-alpine as db
 WORKDIR /app
 COPY package*.json ./
 RUN npm install

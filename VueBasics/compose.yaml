@@ -1,8 +1,13 @@
 services:
   app:
-    build: .
-    image: vue-basics
-    container_name: VueBasics
+    build: ./App
+    image: vue-basics-app
+    container_name: VueBasicsApp
     ports:
       - 3000:3000
+  db:
+    build: ./Db
+    image: vue-basics-db
+    container_name: VueBasicsDb
+    ports:
       - 3001:3001

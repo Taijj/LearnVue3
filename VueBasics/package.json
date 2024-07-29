@@ -1,10 +1,7 @@
 {
-  "scripts": {
-    "start": "npx serve & npx json-server db.json -p 3001"
-  },
-  "dependencies": {
-    "concurrently": "^8.2.2",
-    "json-server": "^1.0.0-beta.1",
-    "serve": "^14.2.3"
-  }
+	"scripts": {
+        "app" : "cd App && npx serve",
+        "db" : "cd Db && npx json-server db.json -p 3001",
+		"start": "npm run db & npm run app"
+	}
 }

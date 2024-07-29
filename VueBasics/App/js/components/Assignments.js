@@ -4,12 +4,12 @@ import AssignmentList from "./AssignmentList.js";
 export default {
     components: { AssignmentList, AssignmentCreate },
 
-    template: `        
+    template: `
         <section class="flex gap-8">
             <assignment-list :assignments="filters.todo" title="Todo:">
                 <assignment-create @add="add"></assignment-create>
             </assignment-list>
-            <assignment-list :assignments="filters.done" title="Done:" can-toggle></assignment-list>                        
+            <assignment-list :assignments="filters.done" title="Done:" can-toggle></assignment-list>
         </section>
     `,
 
@@ -17,7 +17,7 @@ export default {
         return {
             assignments: []
         }
-    },    
+    },
     computed: {
         filters() {
             return {
@@ -28,7 +28,7 @@ export default {
     },
 
     // Lifecycle hook
-    created() {        
+    created() {
         // Ajax call to db endpoint
         fetch('http://localhost:3001/assignments')
             .then(r => r.json())
@@ -37,7 +37,7 @@ export default {
 
     methods: {
         add(name) {
-            
+
             this.assignments.push({
                 name: name,
                 complete: false,
