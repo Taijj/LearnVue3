@@ -1,12 +1,11 @@
 // jsx == "Javascript Extension"
 
 const name = "Rob";
-
 function aFunction() {
   return "Wow!";
 }
 
-export default function Hello() {
+export default function HelloBasic() {
   // jsx needs to always return one single element, potentially containing multiple others!
   return (
     <div>
